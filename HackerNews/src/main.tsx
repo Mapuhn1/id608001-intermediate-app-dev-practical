@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
+export const queryClient = new QueryClient();
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
