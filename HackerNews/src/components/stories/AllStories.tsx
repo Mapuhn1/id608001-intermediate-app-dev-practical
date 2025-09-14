@@ -11,3 +11,5 @@ const AllStories = () => {
     </div>
   );
 };
+
+export default AllStories;
