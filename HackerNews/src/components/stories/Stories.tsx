@@ -43,3 +43,5 @@ const Stories = () => {
     </div>
   );
 };
+
+export default Stories;
