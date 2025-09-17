@@ -4,6 +4,9 @@ import { useSearchParams } from "react-router";
 
 
 const Stories = () => {
+  const [searchParams] = useSearchParams();
+  const storyType = searchParams.get("type") || "top";
+
   const { isLoading, error, data } = useQuery({
     queryKey: ["top-stories"],
     queryFn: async () => {
