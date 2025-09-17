@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import '../../App.css';
 import { useSearchParams } from "react-router";
 
+import { fetchStoriesByType } from "./API"
 
 const Stories = () => {
   const [searchParams] = useSearchParams();
