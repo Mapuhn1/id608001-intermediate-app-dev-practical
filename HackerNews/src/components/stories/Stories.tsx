@@ -18,7 +18,7 @@ const Stories = () => {
 
   return (
     <div>
-      <h2>Top Stories</h2>
+      <h2>{storyType.charAt(0).toUpperCase() + storyType.slice(1)} Stories</h2>
       {data?.map((story) => (
         <div key={story.id}>
           <h3>{story.title}</h3>
