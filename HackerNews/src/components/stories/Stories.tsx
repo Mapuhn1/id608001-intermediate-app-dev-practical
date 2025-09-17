@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import '../../App.css';
+import { useSearchParams } from "react-router";
+
 
 const Stories = () => {
   const { isLoading, error, data } = useQuery({
