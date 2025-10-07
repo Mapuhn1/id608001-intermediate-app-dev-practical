@@ -1,9 +1,13 @@
 import { NavLink } from "react-router";
-
-const Navbar = () => (
-  <nav>
-
-  </nav>
-);
+import {
+  Flame,
+  TrendingUp,
+  Award,
+  MessageSquare,
+  Eye,
+  Briefcase,
+  Trophy,
+  Heart,
+} from "lucide-react";
 
 export default Navbar;
