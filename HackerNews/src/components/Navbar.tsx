@@ -10,4 +10,8 @@ import {
   Heart,
 } from "lucide-react";
 
+const Navbar = () => {
+
+};
+
 export default Navbar;
