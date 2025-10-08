@@ -14,6 +14,10 @@ function App() {
         </header>
 
         <Navbar />
+
+        <main className="py-8">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
