@@ -32,6 +32,17 @@ const Navbar = () => {
               HN Stories
             </span>
           </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto flex-1 scrollbar-hide">
+            {navItems.map(({ to, label, icon: Icon }) => (
+              <NavLink key={to} to={to}>
+                  <>
+                    <Icon/>
+                    <span>{label}</span>
+                  </>
+              </NavLink>
+            ))}
+          </div> 
         </div>
       </div>
     </nav>
