@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router';
+import Navbar from './components/Navbar.tsx';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
             </h1>
           </div>
         </header>
+
+        <Navbar />
       </div>
     </div>
   );
