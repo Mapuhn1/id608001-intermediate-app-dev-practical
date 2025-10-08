@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router';
 
 function App() {
-
   return (
     <div className="min-h-screen bg-gray-50 flex justify-center">
       <div className="w-full max-w-[1280px] px-8 text-center">
@@ -17,4 +16,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
