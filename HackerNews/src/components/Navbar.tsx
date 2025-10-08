@@ -19,6 +19,23 @@ const Navbar = () => {
     { to: "/stories?type=show", label: "Show", icon: Eye },
     { to: "/stories?type=job", label: "Jobs", icon: Briefcase },
   ];
+
+  return (
+    <nav className="sticky top-0 z-50 bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4">
+          <div className="flex items-center gap-2 mr-8">
+            <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-300 rounded-lg flex items-center justify-center">
+              <Flame className="w-5 h-5 text-white" />
+            </div>
+            <span>
+              HN Stories
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
