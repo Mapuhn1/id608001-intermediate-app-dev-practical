@@ -40,7 +40,17 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2 overflow-x-auto flex-1 scrollbar-hide">
             {navItems.map(({ to, label, icon: Icon }) => (
-              <NavLink key={to} to={to}>
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  ` px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2  ${
+                    isActive
+                      ? "bg-gradient-to-r from-pink-500 to-pink-300  text-white"
+                      : "text-gray-600 hover:text-pink-600 hover:bg-pink-50"
+                  }`
+                }
+              >
                   <>
                     <Icon/>
                     <span>{label}</span>
