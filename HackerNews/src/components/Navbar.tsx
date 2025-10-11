@@ -51,8 +51,21 @@ const Navbar = () => {
                   }`
                 }
               >
+                {({ isActive }) => (
                   <>
-                    <Icon/>
+                    <Icon
+                      className={`w-4 h-4 ${
+                        isActive ? "" : "group-hover:scale-110 transition-transform"
+                      }`}
+                    />
+                    <span>{label}</span>
+                    {!isActive && (
+                      <div className="absolute inset-0 rounded-xl bg-pink-500/0 group-hover:bg-pink-500/5 transition-colors" />
+                    )}
+                  </>
+                )}
+              </NavLink>
+            ))}
                     <span>{label}</span>
                   </>
               </NavLink>
