@@ -66,8 +66,34 @@ const Navbar = () => {
                 )}
               </NavLink>
             ))}
+
+            <div className="h-8 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent mx-2" />
+
+            {sideItems.map(({ to, label, icon: Icon }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  `group relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center gap-2 whitespace-nowrap ${
+                    isActive
+                      ? "bg-gradient-to-r from-pink-500 to-pink-400 text-white shadow-lg shadow-pink-500/30"
+                      : "text-gray-600 hover:text-pink-600 hover:bg-pink-50"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <Icon
+                      className={`w-4 h-4 ${
+                        isActive ? "" : "group-hover:scale-110 transition-transform"
+                      }`}
+                    />
                     <span>{label}</span>
+                    {!isActive && (
+                      <div className="absolute inset-0 rounded-xl bg-pink-500/0 group-hover:bg-pink-500/5 transition-colors" />
+                    )}
                   </>
+                )}
               </NavLink>
             ))}
           </div> 
