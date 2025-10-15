@@ -39,7 +39,8 @@ const toggleFavourite = (id, story) => {
 
 
   const getDomain = (url) => {
-  
+    if (!url) return null;
+    
   };
 
   const { isLoading, error, data } = useQuery({
