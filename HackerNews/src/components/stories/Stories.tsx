@@ -30,6 +30,8 @@ const toggleFavourite = (id, story) => {
     updated = [...storedFavourites, story];
   }
 
+  localStorage.setItem("favourites", JSON.stringify(updated));
+
 
   const { isLoading, error, data } = useQuery({
     queryKey: [storyType],
