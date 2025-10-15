@@ -147,6 +147,16 @@ const toggleFavourite = (id, story) => {
               >
                 {storyType}
               </span>
+                {story.text.length > 100 && (
+                  <button
+                    onClick={() => toggleExpanded(story.id)}
+                    className="text-pink-600 hover:text-pink-700 font-medium text-sm mt-2"
+                  >
+                    {expandedStories.has(story.id)
+                      ? "Show less"
+                      : "Read more"}
+                  </button>
+                )}
       </div>
     </div>
   );
