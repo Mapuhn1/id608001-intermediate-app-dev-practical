@@ -107,6 +107,10 @@ const toggleFavourite = (id, story) => {
                 <User className="w-4 h-4" />
                 {story.by}
               </span>
+              <span className="flex items-center gap-1">
+                <Clock className="w-4 h-4" />
+                {new Date(story.time * 1000).toLocaleString()}
+              </span>
       </div>
     </div>
   );
