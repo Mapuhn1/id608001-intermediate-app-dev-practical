@@ -18,22 +18,11 @@ const Stories = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
-      <h2>{storyType.charAt(0).toUpperCase() + storyType.slice(1)} Stories</h2>
-      {data?.map((story) => (
-        <div key={story.id}>
-          <h3>{story.title}</h3>
-          <p>By: {story.by}</p>
-          <p>{new Date(story.time * 1000).toLocaleString()}</p>
-          <p>{story.text}</p>
-          <p>{story.score}</p>
-          {story.url && (
-            <a href={story.url}>
-              Read more
-            </a>
-          )}
-        </div>
-      ))}
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-gray-900 capitalize">
+          {storyType} Stories
+        </h2>
+      </div>
     </div>
   );
 };
