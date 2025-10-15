@@ -103,6 +103,10 @@ const toggleFavourite = (id, story) => {
                     }`}
                 />
               </button>
+              <span className="flex items-center gap-1">
+                <User className="w-4 h-4" />
+                {story.by}
+              </span>
       </div>
     </div>
   );
