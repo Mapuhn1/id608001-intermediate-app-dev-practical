@@ -122,6 +122,13 @@ const toggleFavourite = (id, story) => {
                 <Clock className="w-4 h-4" />
                 {new Date(story.time * 1000).toLocaleString()}
               </span>
+              <span
+                className={`px-2 py-1 rounded-full text-xs font-semibold border ${getTypeBadgeColor(
+                  storyType
+                )}`}
+              >
+                {storyType}
+              </span>
       </div>
     </div>
   );
