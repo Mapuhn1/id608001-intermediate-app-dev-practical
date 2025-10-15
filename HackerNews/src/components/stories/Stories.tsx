@@ -47,6 +47,9 @@ const toggleFavourite = (id, story) => {
       return null;
     }
   };
+  const getTypeBadgeColor = (type) => {
+    
+  };
   };
 
   const { isLoading, error, data } = useQuery({
