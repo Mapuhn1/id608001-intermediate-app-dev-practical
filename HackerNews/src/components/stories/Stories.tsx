@@ -81,6 +81,16 @@ const toggleFavourite = (id, story) => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {story.title}
                 </h3>
+
+                {story.url && (
+                  <a
+                    href={story.url}
+                    className="text-sm text-gray-500 hover:text-pink-600 inline-flex items-center gap-1"
+                  >
+                    {getDomain(story.url)}
+                  </a>
+                )}
+              </div>
       </div>
     </div>
   );
