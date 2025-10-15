@@ -20,9 +20,8 @@ const Stories = () => {
     });
   };
 const toggleFavourite = (id, story) => {
+  const storedFavourites = JSON.parse(localStorage.getItem("favourites") || "[]");
   
-};
-
 
   const { isLoading, error, data } = useQuery({
     queryKey: [storyType],
