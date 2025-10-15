@@ -147,6 +147,17 @@ const toggleFavourite = (id, story) => {
               >
                 {storyType}
               </span>
+            {story.text && (
+              <div className="mb-4">
+                <div
+                  className="text-gray-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: expandedStories.has(story.id)
+                      ? story.text
+                      : story.text.substring(0, 100) +
+                      (story.text.length > 100 ? "..." : ""),
+                  }}
+                />
                 {story.text.length > 100 && (
                   <button
                     onClick={() => toggleExpanded(story.id)}
