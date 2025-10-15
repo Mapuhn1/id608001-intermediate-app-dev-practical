@@ -92,6 +92,17 @@ const toggleFavourite = (id, story) => {
                   </a>
                 )}
               </div>
+             <button
+  onClick={() => toggleFavourite(story.id, story)}
+  className="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"
+>
+                <Heart
+                  className={`w-6 h-6 ${favourites.has(story.id)
+                      ? "fill-red-500 text-red-500"
+                      : ""
+                    }`}
+                />
+              </button>
       </div>
     </div>
   );
