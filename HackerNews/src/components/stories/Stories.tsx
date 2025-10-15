@@ -28,8 +28,14 @@ const toggleFavourite = (id, story) => {
     queryFn: async () => fetchStoriesByType(storyType),
   });
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-pink-500"></div>
+      </div>
+    );
+  }
+
 
   return (
       <div className="text-center mb-8">
