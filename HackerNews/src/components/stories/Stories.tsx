@@ -19,6 +19,10 @@ const Stories = () => {
       return newSet;
     });
   };
+const toggleFavourite = (id, story) => {
+  
+};
+
 
   const { isLoading, error, data } = useQuery({
     queryKey: [storyType],
