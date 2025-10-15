@@ -48,8 +48,14 @@ const toggleFavourite = (id, story) => {
     }
   };
   const getTypeBadgeColor = (type) => {
-    
-  };
+    const colors: Record<string, string> = {
+      ask: "bg-blue-100 text-blue-700 border-blue-200",
+      best: "bg-green-100 text-green-700 border-green-200",
+      job: "bg-yellow-100 text-yellow-700 border-yellow-200",
+      new: "bg-purple-100 text-purple-700 border-purple-200",
+      show: "bg-orange-100 text-orange-700 border-orange-200",
+      top: "bg-red-100 text-red-700 border-red-200",
+    };
   };
 
   const { isLoading, error, data } = useQuery({
