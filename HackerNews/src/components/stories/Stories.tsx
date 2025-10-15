@@ -73,6 +73,11 @@ const toggleFavourite = (id, story) => {
     queryFn: async () => fetchStoriesByType(storyType),
   });
 
+
+  const filteredStories = data?.filter((story: any) => {
+ 
+  });
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
