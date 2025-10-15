@@ -110,6 +110,12 @@ const toggleFavourite = (id, story) => {
           {filteredStories?.length || 0} results found
         </p>
       </div>
+
+      {filteredStories?.length === 0 && (
+        <p className="text-center text-gray-500 italic mt-10">
+          No stories found matching "{search}".
+        </p>
+      )}
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {story.title}
                 </h3>
