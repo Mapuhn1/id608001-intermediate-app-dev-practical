@@ -58,6 +58,13 @@ const toggleFavourite = (id, story) => {
     };
     return colors[type] || "bg-gray-100 text-gray-700 border-gray-200";
   };
+
+  const getScoreBadgeColor = (score) => {
+    if (score >= 5001) return "bg-blue-500 text-white";
+    if (score >= 1001) return "bg-green-500 text-white";
+    if (score >= 501) return "bg-yellow-500 text-white";
+    if (score >= 101) return "bg-orange-500 text-white";
+    return "bg-red-500 text-white";
   };
 
   const { isLoading, error, data } = useQuery({
