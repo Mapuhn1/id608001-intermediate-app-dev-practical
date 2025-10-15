@@ -9,6 +9,9 @@ const Stories = () => {
   const [searchParams] = useSearchParams();
   const storyType = searchParams.get("type") || "top";
 
+  const [expandedStories, setExpandedStories] = useState(new Set());
+  
+
   const { isLoading, error, data } = useQuery({
     queryKey: [storyType],
     queryFn: async () => fetchStoriesByType(storyType),
