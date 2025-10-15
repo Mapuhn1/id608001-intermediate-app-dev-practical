@@ -10,6 +10,8 @@ const Stories = () => {
   const storyType = searchParams.get("type") || "top";
 
   const [expandedStories, setExpandedStories] = useState(new Set());
+  const [favourites, setFavourites] = useState(new Set());
+  
   const toggleExpanded = (id) => {
     setExpandedStories((prev) => {
       const newSet = new Set(prev);
