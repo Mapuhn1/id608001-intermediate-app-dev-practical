@@ -56,6 +56,8 @@ const toggleFavourite = (id, story) => {
       show: "bg-orange-100 text-orange-700 border-orange-200",
       top: "bg-red-100 text-red-700 border-red-200",
     };
+    return colors[type] || "bg-gray-100 text-gray-700 border-gray-200";
+  };
   };
 
   const { isLoading, error, data } = useQuery({
