@@ -11,7 +11,8 @@ const Stories = () => {
 
   const [expandedStories, setExpandedStories] = useState(new Set());
   const [favourites, setFavourites] = useState(new Set());
-  
+  const [search, setSearch] = useState("");
+
   const toggleExpanded = (id) => {
     setExpandedStories((prev) => {
       const newSet = new Set(prev);
