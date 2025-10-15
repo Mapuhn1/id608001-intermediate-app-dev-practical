@@ -21,7 +21,8 @@ const Stories = () => {
   };
 const toggleFavourite = (id, story) => {
   const storedFavourites = JSON.parse(localStorage.getItem("favourites") || "[]");
-  
+  const exists = storedFavourites.some((item) => item.id === id);
+
 
   const { isLoading, error, data } = useQuery({
     queryKey: [storyType],
