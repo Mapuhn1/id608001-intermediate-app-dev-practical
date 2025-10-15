@@ -38,6 +38,10 @@ const toggleFavourite = (id, story) => {
 
 
 
+  const getDomain = (url) => {
+  
+  };
+
   const { isLoading, error, data } = useQuery({
     queryKey: [storyType],
     queryFn: async () => fetchStoriesByType(storyType),
