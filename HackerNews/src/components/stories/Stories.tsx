@@ -88,6 +88,7 @@ const toggleFavourite = (id, story) => {
                     className="text-sm text-gray-500 hover:text-pink-600 inline-flex items-center gap-1"
                   >
                     {getDomain(story.url)}
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
               </div>
