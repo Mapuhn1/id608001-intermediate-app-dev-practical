@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router";
 import { useState } from "react";
 
-import { fetchStoriesByType } from "./API"
+import { User, Clock, ExternalLink, Heart, Search } from "lucide-react";
+import { fetchStoriesByType } from "./API";
 
 const Stories = () => {
   const [searchParams] = useSearchParams();
