@@ -157,6 +157,13 @@ const toggleFavourite = (id, story) => {
                       : "Read more"}
                   </button>
                 )}
+            <a
+              href={`https://news.ycombinator.com/item?id=${story.id}`}
+              className="inline-flex items-center gap-2 text-pink-600 font-medium text-sm"
+            >
+              View on Hacker News
+              <ExternalLink className="w-4 h-4" />
+            </a>
       </div>
     </div>
   );
