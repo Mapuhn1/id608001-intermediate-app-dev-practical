@@ -67,6 +67,9 @@ const toggleFavourite = (id, story) => {
         <h2 className="text-3xl font-bold text-gray-900 capitalize">
           {storyType} Stories
         </h2>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {story.title}
+                </h3>
       </div>
     </div>
   );
