@@ -75,7 +75,11 @@ const toggleFavourite = (id, story) => {
 
 
   const filteredStories = data?.filter((story: any) => {
- 
+    const searchWords = search.toLowerCase();
+    return (
+      story.title?.toLowerCase().includes(searchWords) ||
+      storyType.toLowerCase().includes(searchWords)
+    );
   });
 
   if (isLoading) {
