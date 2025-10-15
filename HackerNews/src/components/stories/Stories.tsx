@@ -40,7 +40,13 @@ const toggleFavourite = (id, story) => {
 
   const getDomain = (url) => {
     if (!url) return null;
-    
+    try {
+      const domain = url.split("//")[1]?.split("/")[0];
+      return domain?.replace("www.", "");
+    } catch {
+      return null;
+    }
+  };
   };
 
   const { isLoading, error, data } = useQuery({
