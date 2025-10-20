@@ -20,6 +20,7 @@ const Stories = () => {
       return newSet;
     });
   };
+
 const toggleFavourite = (id, story) => {
   const storedFavourites = JSON.parse(localStorage.getItem("favourites") || "[]");
   const exists = storedFavourites.some((item) => item.id === id);
@@ -48,6 +49,7 @@ const toggleFavourite = (id, story) => {
       return null;
     }
   };
+
   const getTypeBadgeColor = (type) => {
     const colors: Record<string, string> = {
       ask: "bg-blue-100 text-blue-700 border-blue-200",
@@ -128,6 +130,15 @@ const toggleFavourite = (id, story) => {
           No stories found matching "{search}".
         </p>
       )}
+
+      <div className="space-y-6">
+        {filteredStories?.map((story: any) => (
+          <div
+            key={story.id}
+            className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 border border-gray-200"
+          >
+            <div className="flex items-start justify-between gap-4 mb-3">
+              <div className="flex-1">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {story.title}
                 </h3>
@@ -142,6 +153,7 @@ const toggleFavourite = (id, story) => {
                   </a>
                 )}
               </div>
+
              <button
   onClick={() => toggleFavourite(story.id, story)}
   className="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"
@@ -153,6 +165,9 @@ const toggleFavourite = (id, story) => {
                     }`}
                 />
               </button>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
               <span className="flex items-center gap-1">
                 <User className="w-4 h-4" />
                 {story.by}
@@ -179,6 +194,8 @@ const toggleFavourite = (id, story) => {
               >
                 {storyType}
               </span>
+            </div>
+
             {story.text && (
               <div className="mb-4">
                 <div
@@ -200,6 +217,9 @@ const toggleFavourite = (id, story) => {
                       : "Read more"}
                   </button>
                 )}
+              </div>
+            )}
+
             <a
               href={`https://news.ycombinator.com/item?id=${story.id}`}
               className="inline-flex items-center gap-2 text-pink-600 font-medium text-sm"
@@ -207,6 +227,8 @@ const toggleFavourite = (id, story) => {
               View on Hacker News
               <ExternalLink className="w-4 h-4" />
             </a>
+          </div>
+        ))}
       </div>
     </div>
   );
