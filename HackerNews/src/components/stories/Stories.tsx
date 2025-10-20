@@ -102,6 +102,18 @@ const toggleFavourite = (id, story) => {
   }
 
   return (
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="flex items-center gap-3 mb-8 bg-white shadow-sm border border-gray-200 rounded-lg p-3">
+        <Search className="text-gray-400 w-5 h-5" />
+        <input
+          type="text"
+          placeholder="Search stories by title..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full outline-none text-gray-800 placeholder-gray-400"
+        />
+      </div>
+
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 capitalize">
           {storyType} Stories
