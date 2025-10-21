@@ -13,6 +13,8 @@ const Stories = () => {
   const [expandedStories, setExpandedStories] = useState(new Set());
   const [favourites, setFavourites] = useState(new Set());
   const [search, setSearch] = useState("");
+  const [sortBy, setSortBy] = useState("time");
+
 
   const toggleExpanded = (id) => {
     setExpandedStories((prev) => {
