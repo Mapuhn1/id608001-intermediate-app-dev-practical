@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router";
 import { useState } from "react";
+import LoadingSpinner from "../Spinner.tsx";
 
 import { User, Clock, ExternalLink, Heart, Search } from "lucide-react";
 import { fetchStoriesByType } from "./API";
@@ -84,13 +85,9 @@ const toggleFavourite = (id, story) => {
     );
   });
 
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-pink-500"></div>
-      </div>
-    );
-  }
+if (isLoading) {
+  return <LoadingSpinner />;
+}
 
   if (error) {
     return (
