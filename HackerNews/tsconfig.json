@@ -1,10 +1,7 @@
 {
-  // Omitted for brevity
-  "compilerOptions": {
-    "baseUrl": ".",
-     "jsx": "react-jsx",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
