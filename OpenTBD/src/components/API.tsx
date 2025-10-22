@@ -6,5 +6,6 @@ export const fetchQuiz = async (
   difficulty: string,
   type: string
 ) => {
-
+  const url = `${apiUrl}?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
+  
 };
