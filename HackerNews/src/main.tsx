@@ -8,10 +8,8 @@ import Stories from './components/stories/Stories.tsx';
 import Leaders from './components/leaders/Leaders.tsx';
 import Favourites from './components/favourites/Favourites.tsx';
 import './index.css'
-import App from './App'
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
-export const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -27,5 +25,5 @@ createRoot(document.getElementById('root')!).render(
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);
