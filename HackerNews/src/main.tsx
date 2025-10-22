@@ -17,7 +17,14 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App />
+        <Routes>
+          <Route path='/' element={<App />}>
+            <Route path='stories' element={<Stories />} />
+            <Route path='leaders' element={<Leaders />} />
+            <Route path='favourites' element={<Favourites />} />
+
+          </Route>
+        </Routes>
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>,
