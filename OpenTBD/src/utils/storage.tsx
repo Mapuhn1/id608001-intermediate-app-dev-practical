@@ -10,4 +10,9 @@ export const storage = {
     quizzes.push(quiz);
     localStorage.setItem('quizzes', JSON.stringify(quizzes));
   },
+  
+  // Get all results
+  getResults: () => {
+    return JSON.parse(localStorage.getItem('results') || '[]');
+  },
 };
