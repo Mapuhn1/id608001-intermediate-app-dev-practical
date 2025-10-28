@@ -15,4 +15,11 @@ export const storage = {
   getResults: () => {
     return JSON.parse(localStorage.getItem('results') || '[]');
   },
+  
+  // Save a quiz result
+  saveResult: (result) => {
+    const results = storage.getResults();
+    results.push(result);
+    localStorage.setItem('results', JSON.stringify(results));
+  },
 };
