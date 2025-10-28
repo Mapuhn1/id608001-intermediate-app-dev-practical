@@ -3,5 +3,11 @@ export const storage = {
   getQuizzes: () => {
     return JSON.parse(localStorage.getItem('quizzes') || '[]');
   },
-
+  
+  // Save a new quiz
+  saveQuiz: (quiz) => {
+    const quizzes = storage.getQuizzes();
+    quizzes.push(quiz);
+    localStorage.setItem('quizzes', JSON.stringify(quizzes));
+  },
 };
