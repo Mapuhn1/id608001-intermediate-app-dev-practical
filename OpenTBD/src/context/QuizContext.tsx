@@ -23,4 +23,19 @@ export const QuizProvider = ({ children }) => {
     setResults((prev) => [...prev, result]);
   };
 
+  return (
+    <QuizContext.Provider
+      value=
+      {{ 
+        quizzes, 
+        results, 
+        categories, 
+        setCategories, 
+        addQuiz, 
+        addResult 
+    }}
+    >
+      {children}
+    </QuizContext.Provider>
+  );
 };
