@@ -8,4 +8,9 @@ export const QuizProvider = ({ children }) => {
     const [results, setResults] = useState([]);
     const [categories, setCategories] = useState([]);
 
+    useEffect(() => {
+        setQuizzes(storage.getQuizzes());
+        setResults(storage.getResults());
+    }, []);
+
 };
