@@ -1,9 +1,3 @@
-import { useState } from "react";
-import { fetchQuiz } from "../API";
+import { useState } from 'react';
 
-const QuizForm = () => {
- 
-
-};
-
-export default QuizForm;
+export const QuizBuilder = () => {};
