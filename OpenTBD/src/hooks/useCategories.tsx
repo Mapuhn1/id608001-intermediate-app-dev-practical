@@ -5,4 +5,5 @@ import { storage } from '../utils/storage';
 export const useCategories = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 };
