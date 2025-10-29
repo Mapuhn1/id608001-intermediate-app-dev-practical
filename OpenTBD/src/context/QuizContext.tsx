@@ -13,4 +13,9 @@ export const QuizProvider = ({ children }) => {
         setResults(storage.getResults());
     }, []);
 
+    const addQuiz = (quiz) => {
+        storage.saveQuiz(quiz);
+        setQuizzes((prev) => [...prev, quiz]);
+    };
+
 };
