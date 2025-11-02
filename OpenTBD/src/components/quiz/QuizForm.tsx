@@ -41,3 +41,12 @@ export const QuizBuilder = () => {
 
       addQuiz(newQuiz);
       alert('Quiz created successfully!');
+
+      setForm({
+        amount: 10,
+        category: '',
+        difficulty: '',
+        type: '',
+        startDate: '',
+        endDate: ''
+      });
