@@ -138,6 +138,11 @@ export const QuizBuilder = () => {
             required
           />
         </div>
+
+        <Button type="submit" disabled={loading} className="w-full">
+          {loading ? 'Creating Quiz...' : 'Create Quiz'}
+        </Button>
+      </form>
     </div>
   );
 };
