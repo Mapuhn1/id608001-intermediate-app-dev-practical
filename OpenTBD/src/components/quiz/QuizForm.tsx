@@ -25,6 +25,7 @@ export const QuizBuilder = () => {
 
     setLoading(true);
 
+    try {
       const questions = await fetchQuiz(
         form.amount,
         form.category,
@@ -50,3 +51,9 @@ export const QuizBuilder = () => {
         startDate: '',
         endDate: ''
       });
+    } catch (error) {
+      alert('Failed to create quiz');
+    } finally {
+      setLoading(false);
+    }
+  };
