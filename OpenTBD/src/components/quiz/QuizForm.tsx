@@ -17,4 +17,8 @@ export const QuizBuilder = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  };
+
+    if (!form.startDate || !form.endDate) {
+      alert('Please select dates');
+      return;
+    }
