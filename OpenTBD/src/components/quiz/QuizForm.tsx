@@ -93,6 +93,20 @@ export const QuizBuilder = () => {
             ))}
           </select>
         </div>
+
+        <div>
+          <label>Difficulty</label>
+          <select
+            value={form.difficulty}
+            onChange={(e) => setForm({ ...form, difficulty: e.target.value })}
+          >
+            <option value="">Any Difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
     </div>
   );
 };
