@@ -118,6 +118,26 @@ export const QuizBuilder = () => {
             <option value="boolean">True/False</option>
           </select>
         </div>
+
+        <div>
+          <label>Start Date</label>
+          <input
+            type="date"
+            value={form.startDate}
+            onChange={(e) => setForm({ ...form, startDate: e.target.value })}
+            required
+          />
+        </div>
+
+        <div>
+          <label>End Date</label>
+          <input
+            type="date"
+            value={form.endDate}
+            onChange={(e) => setForm({ ...form, endDate: e.target.value })}
+            required
+          />
+        </div>
     </div>
   );
 };
