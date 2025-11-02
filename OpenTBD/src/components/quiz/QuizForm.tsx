@@ -22,3 +22,5 @@ export const QuizBuilder = () => {
       alert('Please select dates');
       return;
     }
+
+    setLoading(true);
