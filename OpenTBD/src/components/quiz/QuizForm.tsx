@@ -107,6 +107,17 @@ export const QuizBuilder = () => {
           </select>
         </div>
 
+        <div>
+          <label>Type</label>
+          <select
+            value={form.type}
+            onChange={(e) => setForm({ ...form, type: e.target.value })}
+          >
+            <option value="">Any Type</option>
+            <option value="multiple">Multiple Choice</option>
+            <option value="boolean">True/False</option>
+          </select>
+        </div>
     </div>
   );
 };
