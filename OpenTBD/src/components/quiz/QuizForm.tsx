@@ -24,3 +24,10 @@ export const QuizBuilder = () => {
     }
 
     setLoading(true);
+
+      const questions = await fetchQuiz(
+        form.amount,
+        form.category,
+        form.difficulty,
+        form.type
+      );
