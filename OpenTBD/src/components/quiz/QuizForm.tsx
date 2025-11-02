@@ -38,3 +38,6 @@ export const QuizBuilder = () => {
         questions,
         createdAt: new Date().toISOString()
       };
+
+      addQuiz(newQuiz);
+      alert('Quiz created successfully!');
