@@ -24,4 +24,6 @@ export const useQuizzes = () => {
       future: quizzes.filter(q => new Date(q.startDate) > today)
     };
   };
+
+  return { quizzes, addQuiz, categorizeQuizzes };
 };
