@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useCategories } from '../../hooks/useCategories';
 import { useQuiz } from '../../context/QuizContext';
 import { fetchQuiz } from '../API';
+import { Button } from '../ui/button';
 import { Spinner } from '../shared/Spinner';
 
 export const QuizBuilder = () => {
