@@ -31,3 +31,10 @@ export const QuizBuilder = () => {
         form.difficulty,
         form.type
       );
+
+      const newQuiz = {
+        id: Date.now(),
+        ...form,
+        questions,
+        createdAt: new Date().toISOString()
+      };
