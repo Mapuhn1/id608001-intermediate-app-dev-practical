@@ -1,3 +1,3 @@
 import { useState } from 'react';
-
-export const QuizBuilder = () => {};
+import { useCategories } from '../../hooks/useCategories';
+import { useQuiz } from '../../context/QuizContext';
