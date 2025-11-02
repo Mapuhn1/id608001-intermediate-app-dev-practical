@@ -67,7 +67,17 @@ export const QuizBuilder = () => {
     <div className="max-w-2xl mx-auto p-6">
       <p>Create New Quiz</p>
 
-      <form onSubmit={handleSubmit} className="space-y-4"></form>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label>Number of Questions</label>
+          <input
+            type="number"
+            min="1"
+            max="50"
+            value={form.amount}
+            onChange={(e) => setForm({ ...form, amount: e.target.value })}
+          />
+        </div>
     </div>
   );
 };
