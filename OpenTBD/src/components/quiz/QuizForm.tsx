@@ -78,6 +78,21 @@ export const QuizBuilder = () => {
             onChange={(e) => setForm({ ...form, amount: e.target.value })}
           />
         </div>
+
+        <div>
+          <label>Category</label>
+          <select
+            value={form.category}
+            onChange={(e) => setForm({ ...form, category: e.target.value })}
+          >
+            <option value="">Any Category</option>
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.id}>
+                {cat.name}
+              </option>
+            ))}
+          </select>
+        </div>
     </div>
   );
 };
