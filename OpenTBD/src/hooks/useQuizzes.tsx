@@ -7,4 +7,9 @@ export const useQuizzes = () => {
   useEffect(() => {
     setQuizzes(storage.getQuizzes());
   }, []);
+
+  const addQuiz = (quiz) => {
+    storage.saveQuiz(quiz);
+    setQuizzes([...quizzes, quiz]);
+  };
 };
