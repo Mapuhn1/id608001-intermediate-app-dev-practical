@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useCategories } from '../../hooks/useCategories';
 import { useQuiz } from '../../context/QuizContext';
 import { fetchQuiz } from '../API';
+import { Spinner } from '../shared/Spinner';
+
 export const QuizBuilder = () => {
   const { categories, loading: loadingCategories } = useCategories();
   const { addQuiz } = useQuiz();
@@ -57,3 +59,5 @@ export const QuizBuilder = () => {
       setLoading(false);
     }
   };
+
+  if (loadingCategories) return <Spinner />;
