@@ -62,3 +62,12 @@ export const QuizBuilder = () => {
   };
 
   if (loadingCategories) return <Spinner />;
+
+  return (
+    <div className="max-w-2xl mx-auto p-6">
+      <p>Create New Quiz</p>
+
+      <form onSubmit={handleSubmit} className="space-y-4"></form>
+    </div>
+  );
+};
