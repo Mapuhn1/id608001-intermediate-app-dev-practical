@@ -23,4 +23,6 @@ const categoryColors = {
   default: 'bg-gray-500'
 };
 
-export const CategoryBadge = ({ categoryId, categoryName }) => {};
+export const CategoryBadge = ({ categoryId, categoryName }) => {
+  const colorClass = categoryColors[categoryId] || categoryColors.default;
+};
