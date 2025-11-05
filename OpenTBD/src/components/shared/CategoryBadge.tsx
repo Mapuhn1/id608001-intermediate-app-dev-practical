@@ -25,4 +25,10 @@ const categoryColors = {
 
 export const CategoryBadge = ({ categoryId, categoryName }) => {
   const colorClass = categoryColors[categoryId] || categoryColors.default;
+  
+  return (
+    <Badge className={`${colorClass} text-white`}>
+      {categoryName}
+    </Badge>
+  );
 };
