@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardContent, CardFooter } from '../ui/card';
 import { Button } from '../ui/button';
 import { CategoryBadge } from './CategoryBadge';
-import { Calendar } from 'lucide-react' ;
+import { Calendar, Play } from 'lucide-react' ;
 import { useQuiz } from '../../context/QuizContext';
 
 export const QuizCard = ({ quiz, status, onPlay }) => {
