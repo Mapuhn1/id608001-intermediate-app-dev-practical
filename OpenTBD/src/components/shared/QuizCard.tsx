@@ -5,4 +5,8 @@ import { useQuiz } from '../../context/QuizContext';
 
 export const QuizCard = ({ quiz, status, onPlay }) => {
   const { categories } = useQuiz();
+   const getCategoryName = (categoryId) => {
+    const category = categories.find(c => c.id === parseInt(categoryId));
+    return category ? category.name : 'Unknown Category';
+  };
 };
