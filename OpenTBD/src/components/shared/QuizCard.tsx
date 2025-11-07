@@ -23,7 +23,7 @@ export const QuizCard = ({ quiz, status, onPlay }) => {
             status === 'past' ? 'bg-gray-100 text-gray-600' :
             'bg-blue-100 text-blue-800'
           }`}>
-            {status}
+            {status.toUpperCase()}
           </span>
         </div>
       </CardHeader>
