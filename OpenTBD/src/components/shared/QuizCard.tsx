@@ -36,6 +36,11 @@ export const QuizCard = ({ quiz, status, onPlay }) => {
             {new Date(quiz.startDate).toLocaleDateString()} - 
             {new Date(quiz.endDate).toLocaleDateString()}
           </div>
+          <div>
+            {quiz.amount} Questions -- {quiz.difficulty || 'Any'} --
+            {quiz.type === 'multiple' ? 'Multiple Choice' : 
+             quiz.type === 'boolean' ? 'True/False' : 'Any Type'}
+          </div>
         </div>
       </CardContent>
     </Card>
