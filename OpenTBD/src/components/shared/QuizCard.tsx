@@ -9,4 +9,17 @@ export const QuizCard = ({ quiz, status, onPlay }) => {
     const category = categories.find(c => c.id === parseInt(categoryId));
     return category ? category.name : 'Unknown Category';
   };
+
+  return (
+    <Card> 
+      <CardHeader>
+        <div className="flex justify-between items-start">
+          <CategoryBadge 
+            categoryId={quiz.category} 
+            categoryName={getCategoryName(quiz.category)} 
+          />
+        </div>
+      </CardHeader>
+    </Card>
+  );
 };
