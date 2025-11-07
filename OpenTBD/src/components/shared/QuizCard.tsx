@@ -43,6 +43,19 @@ export const QuizCard = ({ quiz, status, onPlay }) => {
           </div>
         </div>
       </CardContent>
+      
+      <CardFooter>
+        {status === 'current' ? (
+          <Button onClick={() => onPlay(quiz)} className="w-full">
+            <Play className="w-4 h-4 mr-2" />
+            Play Quiz
+          </Button>
+        ) : (
+          <Button disabled className="w-full">
+            Not Available
+          </Button>
+        )}
+      </CardFooter>
     </Card>
   );
 };
