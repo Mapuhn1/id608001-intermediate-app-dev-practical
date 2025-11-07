@@ -32,6 +32,7 @@ export const QuizCard = ({ quiz, status, onPlay }) => {
       <CardContent>
         <div className="space-y-2 text-sm text-gray-600">
           <div className="flex items-center gap-2">
+            <Calendar className="w-4 h-4" />
             {new Date(quiz.startDate).toLocaleDateString()} - 
             {new Date(quiz.endDate).toLocaleDateString()}
           </div>
