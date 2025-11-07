@@ -27,6 +27,15 @@ export const QuizCard = ({ quiz, status, onPlay }) => {
           </span>
         </div>
       </CardHeader>
+      
+      <CardContent>
+        <div className="space-y-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2">
+            {new Date(quiz.startDate).toLocaleDateString()} - 
+            {new Date(quiz.endDate).toLocaleDateString()}
+          </div>
+        </div>
+      </CardContent>
     </Card>
   );
 };
