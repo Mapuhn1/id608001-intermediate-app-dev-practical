@@ -28,4 +28,19 @@ export const QuizList = ({ onPlayQuiz }) => {
         </div>
       )}
 
+      {future.length > 0 && (
+        <div>
+          <h3 className="text-2xl font-bold mb-4 text-blue-600">Future Quizzes</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {future.map(quiz => (
+              <QuizCard 
+                key={quiz.id} 
+                quiz={quiz} 
+                status="future"
+                onPlay={() => {}}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 };
