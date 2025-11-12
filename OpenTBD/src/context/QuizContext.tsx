@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { storage } from '../utils/storage';
+import { useCategories } from '../hooks/useCategories';
 
 const QuizContext = createContext(undefined);
 
