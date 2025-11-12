@@ -28,14 +28,14 @@ export const QuizProvider = ({ children }) => {
   return (
     <QuizContext.Provider
       value=
-      {{ 
-        quizzes, 
-        results, 
-        categories, 
-        setCategories, 
-        addQuiz, 
-        addResult 
-    }}
+      {{
+        quizzes,
+        results,
+        categories,
+        categoriesLoading,
+        addQuiz,
+        addResult
+      }}
     >
       {children}
     </QuizContext.Provider>
