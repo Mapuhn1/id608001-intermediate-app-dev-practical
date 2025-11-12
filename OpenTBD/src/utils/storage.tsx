@@ -22,4 +22,21 @@ export const storage = {
     results.push(result);
     localStorage.setItem('results', JSON.stringify(results));
   },
+  
+  // Get categories from cache
+  getCategories: () => {
+    const cached = localStorage.getItem('categories');
+    const timestamp = localStorage.getItem('categoriesTimestamp');
+    
+    if (!cached || !timestamp) return null;
+    
+    // Check if cache is less than 24 hours old
+    const age = Date.now() - parseInt(timestamp);
+    const oneDay = 24 * 60 * 60 * 1000;
+    
+    if (age > oneDay) return null;
+    
+    return JSON.parse(cached);
+  },
+  
 };
