@@ -25,4 +25,8 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
     updated[currentQuestion] = answer;
     setAnswers(updated);
   };
+
+  const handleNext = () => {
+    setCurrentQuestion(prev => Math.min(prev + 1, shuffledQuestions.length - 1));
+  };
 };
