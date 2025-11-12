@@ -19,4 +19,10 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
 
     setShuffledQuestions(shuffled);
   }, [quiz]);
+
+  const handleAnswer = (answer) => {
+    const updated = [...answers];
+    updated[currentQuestion] = answer;
+    setAnswers(updated);
+  };
 };
