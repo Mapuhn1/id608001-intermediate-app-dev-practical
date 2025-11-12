@@ -78,6 +78,29 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
             ))}
           </div>
         </CardContent>    
+
+        <CardFooter className="flex justify-between">
+          <Button
+            onClick={() => setCurrentQuestion(prev => Math.max(prev - 1, 0))}
+            disabled={currentQuestion === 0}
+            variant="outline"
+          >
+            Previous
+          </Button>
+
+          {currentQuestion < shuffledQuestions.length - 1 ? (
+            <Button onClick={handleNext} disabled={!isAnswered}>
+              Next
+            </Button>
+          ) : (
+            <Button
+              onClick={handleSubmit}
+              disabled={answers.length !== shuffledQuestions.length || answers.includes(undefined)}
+            >
+              Submit
+            </Button>
+          )}
+        </CardFooter>
       </Card>
     </div>
   );
