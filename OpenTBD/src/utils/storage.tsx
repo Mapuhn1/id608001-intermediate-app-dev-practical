@@ -39,4 +39,9 @@ export const storage = {
     return JSON.parse(cached);
   },
   
+  // Save categories to cache
+  saveCategories: (categories) => {
+    localStorage.setItem('categories', JSON.stringify(categories));
+    localStorage.setItem('categoriesTimestamp', Date.now().toString());
+  }
 };
