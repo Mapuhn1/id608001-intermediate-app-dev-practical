@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardHeader, CardContent, CardFooter } from '../ui/card';
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
+import { Spinner } from '../shared/Spinner';
 
 export const QuizPlayer = ({ quiz, onComplete }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -37,4 +38,6 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
 
     onComplete({ quiz, answers, shuffledQuestions, score, total: shuffledQuestions.length });
   };
+
+  if (shuffledQuestions.length === 0) return <Spinner/>;
 };
