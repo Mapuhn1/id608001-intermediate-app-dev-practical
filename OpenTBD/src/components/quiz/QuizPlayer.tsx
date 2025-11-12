@@ -56,6 +56,28 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
             <Progress value={progress} />
           </div>
         </CardHeader>
+
+        <CardContent>
+          <h3
+            className="text-xl font-semibold mb-4"
+            dangerouslySetInnerHTML={{ __html: question.question }}
+          />
+          <div className="space-y-3">
+            {question.allAnswers.map((answer, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleAnswer(answer)}
+                className={`w-full text-left p-4 rounded-lg border-2 transition ${
+                  answers[currentQuestion] === answer
+                    ? 'border-pink-600 bg-pink-50'
+                    : 'border-gray-200 hover:border-pink-300'
+                }`}
+              >
+                <span dangerouslySetInnerHTML={{ __html: answer }} />
+              </button>
+            ))}
+          </div>
+        </CardContent>    
       </Card>
     </div>
   );
