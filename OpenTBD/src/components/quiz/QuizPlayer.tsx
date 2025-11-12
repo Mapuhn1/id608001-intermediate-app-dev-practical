@@ -29,4 +29,12 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
   const handleNext = () => {
     setCurrentQuestion(prev => Math.min(prev + 1, shuffledQuestions.length - 1));
   };
+
+  const handleSubmit = () => {
+    const score = shuffledQuestions.reduce((totalCorrect, q, idx) => {
+      return totalCorrect + (answers[idx] === q.correct_answer ? 1 : 0);
+    }, 0);
+
+    onComplete({ quiz, answers, shuffledQuestions, score, total: shuffledQuestions.length });
+  };
 };
