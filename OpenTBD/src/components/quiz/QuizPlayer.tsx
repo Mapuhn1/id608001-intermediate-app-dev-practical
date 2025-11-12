@@ -43,4 +43,20 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
 
   const question = shuffledQuestions[currentQuestion];
   const progress = ((currentQuestion + 1) / shuffledQuestions.length) * 100;
+  const isAnswered = answers[currentQuestion] !== undefined;
+
+  return (
+    <div className="max-w-3xl mx-auto p-6">
+      <Card>
+        <CardHeader>
+          <div className="sp ne-y-2">
+            <div className="text-sm text-gray-600">
+              Question {currentQuestion + 1} of {shuffledQuestions.length}
+            </div>
+            <Progress value={progress} />
+          </div>
+        </CardHeader>
+      </Card>
+    </div>
+  );
 };
