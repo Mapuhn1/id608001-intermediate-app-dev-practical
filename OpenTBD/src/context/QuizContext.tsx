@@ -5,9 +5,10 @@ import { useCategories } from '../hooks/useCategories';
 const QuizContext = createContext(undefined);
 
 export const QuizProvider = ({ children }) => {
-    const [quizzes, setQuizzes] = useState([]);
-    const [results, setResults] = useState([]);
-    const [categories, setCategories] = useState([]);
+  const [quizzes, setQuizzes] = useState([]);
+  const [results, setResults] = useState([]);
+
+  const { categories, loading: categoriesLoading } = useCategories();
 
     useEffect(() => {
         setQuizzes(storage.getQuizzes());
