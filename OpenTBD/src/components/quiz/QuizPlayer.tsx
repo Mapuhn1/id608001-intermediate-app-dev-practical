@@ -40,4 +40,7 @@ export const QuizPlayer = ({ quiz, onComplete }) => {
   };
 
   if (shuffledQuestions.length === 0) return <Spinner/>;
+
+  const question = shuffledQuestions[currentQuestion];
+  const progress = ((currentQuestion + 1) / shuffledQuestions.length) * 100;
 };
