@@ -1,3 +1,4 @@
+import { QuizProvider } from './context/QuizContext';
 import { QuizBuilder } from './components/quiz/QuizForm';
 import { QuizList } from './components/quiz/QuizList';
 import { QuizPlayer } from './components/quiz/QuizPlayer';
