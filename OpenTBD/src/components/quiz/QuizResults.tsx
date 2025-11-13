@@ -57,6 +57,7 @@ export const QuizResults = ({ resultData, onBack }) => {
         <CardHeader>
           <CardTitle>Results for {userName}</CardTitle>
         </CardHeader>
+        <CardContent>
           <div className="text-center mb-6">
             <p className="text-4xl font-bold">
               {resultData.score} / {resultData.total}
@@ -88,6 +89,7 @@ export const QuizResults = ({ resultData, onBack }) => {
               );
             })}
           </div>
+        </CardContent>
       </Card>
     </div>
   );
