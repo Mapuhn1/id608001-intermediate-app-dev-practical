@@ -9,4 +9,21 @@ export const QuizResults = ({ resultData, onBack }) => {
   const { addResult } = useQuiz();
   const [userName, setUserName] = useState('');
   const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    if (!userName.trim()) {
+      alert('Please enter your name');
+      return;
+    }
+
+    const result = {
+      ...resultData,
+      userName,
+      id: Date.now(),
+      completedAt: new Date().toISOString()
+    };
+
+    addResult(result);
+    setSaved(true);
+  };
 };
