@@ -36,103 +36,45 @@ const Stories = () => {
         <Search className="text-gray-400 w-5 h-5" />
         <input
           type="text"
-          placeholder="Search stories by title..."
+          placeholder="Search stories..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full outline-none text-gray-800 placeholder-gray-400"
+          className="w-full outline-none"
         />
       </div>
 
       <div className="flex items-center gap-3 mb-6 bg-white shadow-sm border border-gray-200 rounded-lg p-3">
         <span className="text-gray-700 font-medium">Sort by:</span>
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className="outline-none text-gray-800 bg-transparent cursor-pointer"
-        >
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="outline-none cursor-pointer">
           <option value="time">Time (Newest)</option>
           <option value="score">Score (Highest)</option>
         </select>
       </div>
 
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 capitalize">
-          {storyType} Stories
-        </h2>
-        <p className="text-gray-600 mt-2">
-          {sortedStories?.length || 0} results found
-        </p>
-      </div>
-
-      {sortedStories?.length === 0 && (
-        <p className="text-center text-gray-500 italic mt-10">
-          No stories found matching "{search}".
-        </p>
-      )}
+      <h2 className="text-3xl font-bold text-center mb-2 capitalize">{storyType} Stories</h2>
+      <p className="text-center text-gray-600 mb-8">{sortedStories?.length || 0} results</p>
 
       <div className="space-y-6">
-        {sortedStories?.map((story: any) => (
-          <div
-            key={story.id}
-            className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 border border-gray-200"
-          >
-            <div className="flex items-start justify-between gap-4 mb-3">
+        {sortedStories?.map((story) => (
+          <div key={story.id} className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 border border-gray-200">
+            <div className="flex justify-between gap-4 mb-3">
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {story.title}
-                </h3>
-
+                <h3 className="text-xl font-semibold mb-2">{story.title}</h3>
                 {story.url && (
-                  <a
-                    href={story.url}
-                    className="text-sm text-gray-500 hover:text-pink-600 inline-flex items-center gap-1"
-                  >
-                    {getDomain(story.url)}
-                    <ExternalLink className="w-3 h-3" />
+                  <a href={story.url} className="text-sm text-gray-500 hover:text-pink-600 inline-flex items-center gap-1">
+                    {getDomain(story.url)} <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
               </div>
-
-             <button
-  onClick={() => toggleFavourite(story.id, story)}
-  className="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"
->
-                <Heart
-                  className={`w-6 h-6 ${favourites.has(story.id)
-                      ? "fill-red-500 text-red-500"
-                      : ""
-                    }`}
-                />
+              <button onClick={() => toggle(story.id, story)} className="text-gray-400 hover:text-red-500">
+                <Heart className={`w-6 h-6 ${favourites.has(story.id) ? "fill-red-500 text-red-500" : ""}`} />
               </button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
-              <span className="flex items-center gap-1">
-                <User className="w-4 h-4" />
-                {story.by}
-              </span>
-              <span className="flex items-center gap-1">
-                <Clock className="w-4 h-4" />
-                {new Date(story.time * 1000).toLocaleString()}
-              </span>
-
-              {story.score && (
-                <span
-                  className={`px-2 py-1 rounded-full text-xs font-semibold ${getScoreBadgeColor(
-                    story.score
-                  )}`}
-                >
-                  {story.score} points
-                </span>
-              )}
-
-              <span
-                className={`px-2 py-1 rounded-full text-xs font-semibold border ${getTypeBadgeColor(
-                  storyType
-                )}`}
-              >
-                {storyType}
-              </span>
+            <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+              <span className="flex items-center gap-1"><User className="w-4 h-4" />{story.by}</span>
+              <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{new Date(story.time * 1000).toLocaleString()}</span>
+              {story.score && <span className="px-2 py-1 rounded-full text-xs font-semibold bg-blue-500 text-white">{story.score} points</span>}
             </div>
 
             {story.text && (
