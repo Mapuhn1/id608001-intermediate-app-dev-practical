@@ -4,6 +4,7 @@ import { QuizBuilder } from './components/quiz/QuizForm';
 import { QuizList } from './components/quiz/QuizList';
 import { QuizPlayer } from './components/quiz/QuizPlayer';
 import { QuizResults } from './components/quiz/QuizResults';
+import { Button } from './components/ui/button';
 
 function App() {
   const [count, setCount] = useState(0)
