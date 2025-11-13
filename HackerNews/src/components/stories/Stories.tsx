@@ -2,76 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router";
 import { useState } from "react";
 import LoadingSpinner from "../Spinner.tsx";
-
 import { User, Clock, ExternalLink, Heart, Search } from "lucide-react";
 import { fetchStoriesByType } from "./API";
+import { useFavourites, getDomain } from "./useFavourites.tsx";
 
 const Stories = () => {
   const [searchParams] = useSearchParams();
   const storyType = searchParams.get("type") || "top";
-
   const [expandedStories, setExpandedStories] = useState(new Set());
-  const [favourites, setFavourites] = useState(new Set());
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("time");
-
-
-  const toggleExpanded = (id) => {
-    setExpandedStories((prev) => {
-      const newSet = new Set(prev);
-      newSet.has(id) ? newSet.delete(id) : newSet.add(id);
-      return newSet;
-    });
-  };
-
-const toggleFavourite = (id, story) => {
-  const storedFavourites = JSON.parse(localStorage.getItem("favourites") || "[]");
-  const exists = storedFavourites.some((item) => item.id === id);
-
-  let updated;
-  if (exists) {
-    updated = storedFavourites.filter((item) => item.id !== id);
-  } else {
-    updated = [...storedFavourites, story];
-  }
-
-  localStorage.setItem("favourites", JSON.stringify(updated));
-
-  setFavourites(new Set(updated.map((item) => item.id)));
-};
-
-
-
-
-  const getDomain = (url) => {
-    if (!url) return null;
-    try {
-      const domain = url.split("//")[1]?.split("/")[0];
-      return domain?.replace("www.", "");
-    } catch {
-      return null;
-    }
-  };
-
-  const getTypeBadgeColor = (type) => {
-    const colors: Record<string, string> = {
-      ask: "bg-blue-100 text-blue-700 border-blue-200",
-      best: "bg-green-100 text-green-700 border-green-200",
-      job: "bg-yellow-100 text-yellow-700 border-yellow-200",
-      new: "bg-purple-100 text-purple-700 border-purple-200",
-      show: "bg-orange-100 text-orange-700 border-orange-200",
-      top: "bg-red-100 text-red-700 border-red-200",
-    };
-    return colors[type] || "bg-gray-100 text-gray-700 border-gray-200";
-  };
-
-  const getScoreBadgeColor = (score) => {
-    if (score >= 5001) return "bg-blue-500 text-white";
-    if (score >= 1001) return "bg-green-500 text-white";
-    if (score >= 501) return "bg-yellow-500 text-white";
-    if (score >= 101) return "bg-orange-500 text-white";
-    return "bg-red-500 text-white";
-  };
+  const { favourites, toggle } = useFavourites();
 
   const { isLoading, error, data } = useQuery({
     queryKey: [storyType],
