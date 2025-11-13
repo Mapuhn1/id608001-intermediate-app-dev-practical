@@ -19,14 +19,9 @@ const Stories = () => {
     queryFn: async () => fetchStoriesByType(storyType),
   });
 
-
-  const filteredStories = data?.filter((story: any) => {
-    const searchWords = search.toLowerCase();
-    return (
-      story.title?.toLowerCase().includes(searchWords) ||
-      storyType.toLowerCase().includes(searchWords)
-    );
-  });
+  const filteredStories = data?.filter((story) =>
+    story.title?.toLowerCase().includes(search.toLowerCase())
+  );
 
   const sortedStories = [...(filteredStories || [])].sort((a, b) => {
     if (sortBy === "time") {
