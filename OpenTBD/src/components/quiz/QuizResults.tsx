@@ -6,5 +6,5 @@ import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 
 export const QuizResults = ({ resultData, onBack }) => {
-
+  const { addResult } = useQuiz();
 };
