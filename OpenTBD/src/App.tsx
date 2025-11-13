@@ -23,6 +23,7 @@ function App() {
 
   return (
     <QuizProvider>
+      <div className="min-h-screen bg-gray-50">
         <nav className="bg-white shadow-md mb-6">
           <div className="max-w-6xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
@@ -46,9 +47,41 @@ function App() {
             </div>
           </div>
         </nav>
+
+        <div>
+          {currentView === 'home' && (
+            <div className="max-w-4xl mx-auto px-6">
+              <div className="text-center mb-10">
+                <h2 className="text-4xl font-bold mb-4">
+                  Welcome to OpenTDB Quiz App
+                </h2>
+              </div>
+              <QuizBuilder />
+            </div>
+          )}
+
+          {currentView === 'quizzes' && (
+            <QuizList onPlayQuiz={handlePlayQuiz} />
+          )}
+
+          {currentView === 'play' && currentQuiz && (
+            <QuizPlayer quiz={currentQuiz} onComplete={handleQuizComplete} />
+          )}
+
+          {currentView === 'results' && resultData && (
+            <QuizResults
+              resultData={resultData}
+              onBack={() => {
+                setCurrentView('home');
+                setResultData(null);
+                setCurrentQuiz(null);
+              }}
+            />
+          )}
+        </div>
       </div>
     </QuizProvider>
   );
 }
 
-export default App
+export default App;
