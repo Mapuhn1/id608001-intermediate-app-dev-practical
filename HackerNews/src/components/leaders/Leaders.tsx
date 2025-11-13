@@ -6,3 +6,5 @@ const Leaders = () => {
   const [loading, setLoading] = useState(true);
   const [leadersData, setLeadersData] = useState([]);
 };
+
+export default Leaders;
