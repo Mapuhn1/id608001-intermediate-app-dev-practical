@@ -89,6 +89,10 @@ export const QuizResults = ({ resultData, onBack }) => {
               );
             })}
           </div>
+
+          <Button onClick={onBack} className="w-full mt-6">
+            Back to Home
+          </Button>
         </CardContent>
       </Card>
     </div>
