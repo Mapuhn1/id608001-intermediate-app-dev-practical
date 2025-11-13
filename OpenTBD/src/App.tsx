@@ -11,6 +11,11 @@ function App() {
   const [currentQuiz, setCurrentQuiz] = useState(null);
   const [resultData, setResultData] = useState(null);
 
+  const handlePlayQuiz = (quiz) => {
+    setCurrentQuiz(quiz);
+    setCurrentView('play');
+  };
+
   return (
     <>
       <div>
