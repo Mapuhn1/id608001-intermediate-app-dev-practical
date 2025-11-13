@@ -137,34 +137,23 @@ const Stories = () => {
 
             {story.text && (
               <div className="mb-4">
-                <div
-                  className="text-gray-700 leading-relaxed"
-                  dangerouslySetInnerHTML={{
-                    __html: expandedStories.has(story.id)
-                      ? story.text
-                      : story.text.substring(0, 100) +
-                      (story.text.length > 100 ? "..." : ""),
-                  }}
-                />
+                <div className="text-gray-700" dangerouslySetInnerHTML={{
+                  __html: expandedStories.has(story.id) ? story.text : story.text.substring(0, 100) + (story.text.length > 100 ? "..." : "")
+                }} />
                 {story.text.length > 100 && (
-                  <button
-                    onClick={() => toggleExpanded(story.id)}
-                    className="text-pink-600 hover:text-pink-700 font-medium text-sm mt-2"
-                  >
-                    {expandedStories.has(story.id)
-                      ? "Show less"
-                      : "Read more"}
+                  <button onClick={() => setExpandedStories(prev => {
+                    const next = new Set(prev);
+                    next.has(story.id) ? next.delete(story.id) : next.add(story.id);
+                    return next;
+                  })} className="text-pink-600 hover:text-pink-700 font-medium text-sm mt-2">
+                    {expandedStories.has(story.id) ? "Show less" : "Read more"}
                   </button>
                 )}
               </div>
             )}
 
-            <a
-              href={`https://news.ycombinator.com/item?id=${story.id}`}
-              className="inline-flex items-center gap-2 text-pink-600 font-medium text-sm"
-            >
-              View on Hacker News
-              <ExternalLink className="w-4 h-4" />
+            <a href={`https://news.ycombinator.com/item?id=${story.id}`} className="inline-flex items-center gap-2 text-pink-600 font-medium text-sm">
+              View on Hacker News <ExternalLink className="w-4 h-4" />
             </a>
           </div>
         ))}
