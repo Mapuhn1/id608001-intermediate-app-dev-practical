@@ -87,6 +87,17 @@ const toggleFavourite = (id, story) => {
     );
   });
 
+  const sortedStories = [...(filteredStories || [])].sort((a, b) => {
+    if (sortBy === "time") {
+      return b.time - a.time; 
+    } else if (sortBy === "score") {
+      return (b.score || 0) - (a.score || 0);
+    } else if (sortBy === "type") {
+      return storyType.localeCompare(storyType);
+    }
+    return 0;
+  });
+
 if (isLoading) {
   return <LoadingSpinner />;
 }
@@ -113,6 +124,18 @@ if (isLoading) {
           onChange={(e) => setSearch(e.target.value)}
           className="w-full outline-none text-gray-800 placeholder-gray-400"
         />
+      </div>
+
+      <div className="flex items-center gap-3 mb-6 bg-white shadow-sm border border-gray-200 rounded-lg p-3">
+        <span className="text-gray-700 font-medium">Sort by:</span>
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+          className="outline-none text-gray-800 bg-transparent cursor-pointer"
+        >
+          <option value="time">Time (Newest)</option>
+          <option value="score">Score (Highest)</option>
+        </select>
       </div>
 
       <div className="text-center mb-8">
