@@ -16,6 +16,11 @@ function App() {
     setCurrentView('play');
   };
 
+  const handleQuizComplete = (data) => {
+    setResultData(data);
+    setCurrentView('results');
+  };
+
   return (
     <>
       <div>
