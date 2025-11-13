@@ -24,6 +24,14 @@ const Leaders = () => {
       setLoading(false);
     });
   }, []);
+
+  const getKarmaColor = (k) => {
+    if (k >= 5001) return "bg-blue-500 text-white";
+    if (k >= 1001) return "bg-green-500 text-white";
+    if (k >= 501) return "bg-yellow-500 text-white";
+    if (k >= 101) return "bg-orange-500 text-white";
+    return "bg-red-500 text-white";
+  };
 };
 
 export default Leaders;
