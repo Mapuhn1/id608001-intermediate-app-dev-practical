@@ -26,4 +26,28 @@ export const QuizResults = ({ resultData, onBack }) => {
     addResult(result);
     setSaved(true);
   };
+
+
+  if (!saved) {
+    return (
+      <div className="max-w-2xl mx-auto p-6">
+        <Card>
+          <CardContent className="space-y-4">
+            <p>You scored: {resultData.score} / {resultData.total}</p>
+            <div>
+              <Label>Enter your name to save results:</Label><br/>
+              <Input
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                placeholder="Your name"
+              />
+            </div>
+            <Button onClick={handleSave} className="w-full">
+              Save Results
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 };
