@@ -143,18 +143,18 @@ if (isLoading) {
           {storyType} Stories
         </h2>
         <p className="text-gray-600 mt-2">
-          {filteredStories?.length || 0} results found
+          {sortedStories?.length || 0} results found
         </p>
       </div>
 
-      {filteredStories?.length === 0 && (
+      {sortedStories?.length === 0 && (
         <p className="text-center text-gray-500 italic mt-10">
           No stories found matching "{search}".
         </p>
       )}
 
       <div className="space-y-6">
-        {filteredStories?.map((story: any) => (
+        {sortedStories?.map((story: any) => (
           <div
             key={story.id}
             className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 border border-gray-200"
