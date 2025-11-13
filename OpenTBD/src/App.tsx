@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { QuizBuilder } from './components/quiz/QuizForm';
+import { QuizList } from './components/quiz/QuizList';
+import { QuizPlayer } from './components/quiz/QuizPlayer';
+import { QuizResults } from './components/quiz/QuizResults';
 
 function App() {
   const [count, setCount] = useState(0)
