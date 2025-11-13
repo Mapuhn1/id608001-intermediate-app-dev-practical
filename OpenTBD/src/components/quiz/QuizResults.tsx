@@ -62,6 +62,32 @@ export const QuizResults = ({ resultData, onBack }) => {
               {resultData.score} / {resultData.total}
             </p>
           </div>
+
+          <div className="space-y-4">
+            {resultData.shuffledQuestions.map((q, idx) => {
+              const userAnswer = resultData.answers[idx];
+              const isCorrect = userAnswer === q.correct_answer;
+
+              return (
+                <div
+                  key={idx}
+                  className={`p-4 rounded-lg ${
+                    isCorrect ? 'bg-green-50 border-2 border-green-200' : 'bg-red-50 border-2 border-red-200'
+                  }`}
+                >
+                  <p className="font-semibold mb-2">{`${idx + 1}. ${q.question}`}</p>
+                  <p className="text-sm">
+                    Your answer: <span>{userAnswer || 'Not answered' }</span>
+                  </p>
+                  {!isCorrect && (
+                    <p className="text-sm text-green-700">
+                      Correct answer: <span>{q.correct_answer }</span>
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
       </Card>
     </div>
   );
