@@ -8,4 +8,5 @@ import { Label } from '../ui/label';
 export const QuizResults = ({ resultData, onBack }) => {
   const { addResult } = useQuiz();
   const [userName, setUserName] = useState('');
+  const [saved, setSaved] = useState(false);
 };
