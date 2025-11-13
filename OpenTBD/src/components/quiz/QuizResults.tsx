@@ -50,4 +50,14 @@ export const QuizResults = ({ resultData, onBack }) => {
       </div>
     );
   }
+
+  return (
+    <div className="max-w-4xl mx-auto p-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Results for {userName}</CardTitle>
+        </CardHeader>
+      </Card>
+    </div>
+  );
 };
