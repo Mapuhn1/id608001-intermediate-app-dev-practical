@@ -23,8 +23,32 @@ function App() {
 
   return (
     <QuizProvider>
+        <nav className="bg-white shadow-md mb-6">
+          <div className="max-w-6xl mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
+              <h1 className="text-2xl font-bold text-pink-600">
+                OpenTDB Quiz App
+              </h1>
+              <div className="flex gap-3">
+                <Button
+                  onClick={() => setCurrentView('home')}
+                  variant={currentView === 'home' ? 'default' : 'outline'}
+                >
+                  Home
+                </Button>
+                <Button
+                  onClick={() => setCurrentView('quizzes')}
+                  variant={currentView === 'quizzes' ? 'default' : 'outline'}
+                >
+                  My Quizzes
+                </Button>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
     </QuizProvider>
+  );
 }
 
 export default App
