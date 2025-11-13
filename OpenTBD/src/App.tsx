@@ -7,7 +7,9 @@ import { QuizResults } from './components/quiz/QuizResults';
 import { Button } from './components/ui/button';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentView, setCurrentView] = useState('home');
+  const [currentQuiz, setCurrentQuiz] = useState(null);
+  const [resultData, setResultData] = useState(null);
 
   return (
     <>
